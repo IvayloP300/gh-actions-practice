@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import MainContent from './MainContent';
 
 describe('MainContent', () => {
-  it('should render a button', () => {
+  it('should render a button ', () => {
     render(<MainContent />);
 
     expect(screen.getByRole('button')).toBeInTheDocument();
