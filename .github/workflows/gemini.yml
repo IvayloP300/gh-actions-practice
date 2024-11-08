@@ -1,8 +1,5 @@
 name: Deploy Project
-on: [push, workflow_dispatch]:
-    branches: [main]
-  pull_request:
-    branches: [main]
+on: [push, workflow_dispatch]
 
 jobs:
   build:
