@@ -2,7 +2,6 @@ name: Deploy Project
 on:
   push:
     branches:
-      - main
       - 'dev-*' # this won't match dev-some/feature. But will match anything that doesn't have /
       - 'feature-**' # matches feature- and all subsequent characters + / (if any
   workflow_dispatch:
