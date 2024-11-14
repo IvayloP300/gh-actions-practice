@@ -1,10 +1,21 @@
 name: Deploy Project
-on: [push, workflow_dispatch]
-
+on:
+  push:
+    branches:
+      - main
+      - 'dev-*' # this won't match dev-some/feature. But will match anything that doesn't have /
+      - 'feature-**' # matches feature- and all subsequent characters + / (if any
+  workflow_dispatch:
+  pull_request:
+    types:
+      - opened
+      - assigned
+      - closed
+    branches-ignore:
+      - 'some-branch'
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Get code
         uses: actions/checkout@v3
