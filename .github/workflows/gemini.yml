@@ -5,14 +5,12 @@ on:
       - main
       - 'dev-*' # this won't match dev-some/feature. But will match anything that doesn't have /
       - 'feature-**' # matches feature- and all subsequent characters + / (if any
+    branches-ignore:
+      - 'abc'
   workflow_dispatch:
   pull_request:
-    types:
-      - opened
-      - assigned
-      - closed
     branches-ignore:
-      - 'some-branch'
+      - 'abc'
 jobs:
   test:
     runs-on: ubuntu-latest
